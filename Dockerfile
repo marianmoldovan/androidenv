@@ -40,6 +40,7 @@ RUN export uid=1000 gid=1000 && \
     chmod 0440 /etc/sudoers.d/developer && \
     sudo chown ${uid}:${gid} -R /home/developer
 
+RUN apt-get install -y libxi6 libxt-dev libgconf-2-4 libxi6-dbg libxtst6
 USER developer
 ENV HOME /home/developer
 ENV PATH /opt/gtk/bin:$PATH
